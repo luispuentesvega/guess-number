@@ -45,7 +45,7 @@ const App = () => {
     } else if (guessNumber < number) {
       setMessage(`The number is less than ${number} 🤓`);
     } else {
-      setMessage(`The number is ${number}, Congratulations 🎉🎉🎉!`);
+      setMessage(`The number is ${number}, Congratulations 🎉🎉!`);
     }
     setNumber('');
     setAttempts((prevState) => prevState - 1);
