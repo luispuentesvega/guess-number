@@ -1,5 +1,4 @@
-import GuessResult from './GuessResult';
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 
 const GuessForm = ({
   attempts,

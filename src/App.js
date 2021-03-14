@@ -3,6 +3,8 @@ import './App.css';
 import GuessForm from './components/GuessForm';
 import GuessResult from './components/GuessResult';
 
+const MAX_NUMBER = 100;
+
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
@@ -18,7 +20,7 @@ const App = () => {
 
   useEffect(() => {
     inputRef.current.focus();
-    setGuessNumber(getRandomInt(100));
+    setGuessNumber(getRandomInt(MAX_NUMBER));
   }, []);
 
   const onHandleChange = (e) => {
@@ -27,24 +29,21 @@ const App = () => {
   };
 
   const onHandleSubmit = (e) => {
-    console.log('SUBMIT:', number);
     e.preventDefault();
 
     if (!number || isNaN(number)) {
-      console.log('IS NOT A NUMBER ', number);
       setHasFieldError(true);
       return;
     }
 
-    console.log('attempts', attempts);
     if (attempts <= 1) {
       setMessage(
         `You Lost, the number was ${guessNumber}, give another try by clicking Reset 😉`
       );
     } else if (guessNumber > number) {
-      setMessage(`The number is bigger than ${number} 🤓`);
+      setMessage(`The number is greater than ${number} 🤓`);
     } else if (guessNumber < number) {
-      setMessage(`The number is smaller than ${number} 🤓`);
+      setMessage(`The number is less than ${number} 🤓`);
     } else {
       setMessage(`The number is ${number}, Congratulations 🎉🎉🎉!`);
     }
@@ -58,6 +57,7 @@ const App = () => {
     setNumber('');
     setHasFieldError('');
     setMessage('');
+    setGuessNumber(getRandomInt(MAX_NUMBER));
     inputRef.current.focus();
   };
 
@@ -68,12 +68,12 @@ const App = () => {
     }
   };
 
-  console.log(guessNumber);
-
   const errorClasses = hasFieldError ? 'field error' : '';
 
   return (
     <div>
+      <h1 className="title">Guess the Secret Number 😎</h1>
+      <p />
       <GuessForm
         attempts={attempts}
         btnRef={btnRef}
@@ -91,6 +91,7 @@ const App = () => {
         message={message}
         hasFieldError={hasFieldError}
       />
+      <div className="extra content" />
     </div>
   );
 };
