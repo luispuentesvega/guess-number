@@ -22,7 +22,7 @@ const GuessForm = ({
         <div className="description">
           <div className={`ui input fluid focus ${errorClasses}`}>
             <input
-              type="text"
+              type="number"
               ref={inputRef}
               value={number}
               onChange={onHandleChange}
