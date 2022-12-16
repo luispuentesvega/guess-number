@@ -23,12 +23,12 @@ const App = () => {
     setGuessNumber(getRandomInt(MAX_NUMBER));
   }, []);
 
-  const onHandleChange = (e) => {
+  const onHandleChange = e => {
     setNumber(e.target.value);
     setHasFieldError(false);
   };
 
-  const onHandleSubmit = (e) => {
+  const onHandleSubmit = e => {
     e.preventDefault();
 
     if (!number || isNaN(number)) {
@@ -47,8 +47,18 @@ const App = () => {
     } else {
       setMessage(`The number is ${number}, Congratulations 🎉🎉!`);
     }
+
+    dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
+    dataLayer.push({
+      event: 'click_guess_number',
+      data: {
+        number: number,
+        date: new Date().toISOString()
+      }
+    });
+
     setNumber('');
-    setAttempts((prevState) => prevState - 1);
+    setAttempts(prevState => prevState - 1);
     inputRef.current.focus();
   };
 
@@ -61,7 +71,7 @@ const App = () => {
     inputRef.current.focus();
   };
 
-  const onHandleKeypress = (e) => {
+  const onHandleKeypress = e => {
     //it triggers by pressing the enter key
     if (e.keyCode === 13) {
       btnRef.curren.click();
