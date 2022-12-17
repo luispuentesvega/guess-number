@@ -50,6 +50,7 @@ const App = () => {
 
     window.dataLayer.push({
       event: 'click_guess_number',
+      number: number,
       data: {
         number: number,
         date: new Date().toISOString()
