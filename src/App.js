@@ -54,6 +54,7 @@ const App = () => {
       name: 'Luis',
       data: {
         number: number,
+        name: 'Puentes',
         date: new Date().toISOString()
       }
     });
