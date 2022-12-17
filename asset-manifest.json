@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/guess-number/static/css/main.2e694e29.chunk.css",
-    "main.js": "/guess-number/static/js/main.7ec12dcc.chunk.js",
-    "main.js.map": "/guess-number/static/js/main.7ec12dcc.chunk.js.map",
+    "main.js": "/guess-number/static/js/main.5a8fe61a.chunk.js",
+    "main.js.map": "/guess-number/static/js/main.5a8fe61a.chunk.js.map",
     "runtime-main.js": "/guess-number/static/js/runtime-main.0bf2d7b7.js",
     "runtime-main.js.map": "/guess-number/static/js/runtime-main.0bf2d7b7.js.map",
     "static/js/2.0004e0d1.chunk.js": "/guess-number/static/js/2.0004e0d1.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.0bf2d7b7.js",
     "static/js/2.0004e0d1.chunk.js",
     "static/css/main.2e694e29.chunk.css",
-    "static/js/main.7ec12dcc.chunk.js"
+    "static/js/main.5a8fe61a.chunk.js"
   ]
 }
