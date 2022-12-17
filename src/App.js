@@ -48,8 +48,7 @@ const App = () => {
       setMessage(`The number is ${number}, Congratulations 🎉🎉!`);
     }
 
-    dataLayer.push({ ecommerce: null }); // Clear the previous ecommerce object.
-    dataLayer.push({
+    window.dataLayer.push({
       event: 'click_guess_number',
       data: {
         number: number,
